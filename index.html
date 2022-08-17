@@ -23,12 +23,31 @@
           sans-serif;
         font-weight: 800;
       }
+
+      kbd {
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 20%),
+          0 2px 0 0 rgb(255 255 255 / 70%) inset;
+        color: var(--r-main-color);
+        display: inline-block;
+        font-size: 0.85em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 2px 4px;
+        white-space: nowrap;
+      }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="slides.md">
+        <section
+          class="r-fit-text"
+          data-markdown="slides.md"
+          data-separator-vertical="^--"
+          data-separator-notes="^Note:"
+        >
           <!--
           Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
           For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
@@ -47,7 +66,8 @@
       Reveal.initialize({
         hash: true,
 
-        transition: 'none',
+        transition: "none",
+        // controls: false,
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
