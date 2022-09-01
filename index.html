@@ -17,11 +17,21 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
     <style>
-      p {
-        font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      :root {
+        /* Theme overrides... */
+        --r-main-font: -apple-system, BlinkMacSystemFont, avenir next, avenir,
           helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
           sans-serif;
-        font-weight: 800;
+
+        --r-main-font-weight: 800;
+
+        --r-heading-text-transform: none;
+        --r-heading-font: var(--r-main-font);
+        --r-heading-font-weight: var(--r-main-font-weight);
+      }
+
+      p {
+        font-weight: var(--r-main-font-weight);
       }
 
       kbd {
@@ -37,16 +47,19 @@
         padding: 2px 4px;
         white-space: nowrap;
       }
+
+      .small {
+        font-size: 65%;
+      }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section
-          class="r-fit-text"
           data-markdown="slides.md"
           data-separator-vertical="^--"
-          data-separator-notes="^Note:"
+          data-separator-notes="^NOTE:"
         >
           <!--
           Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
