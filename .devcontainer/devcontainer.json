@@ -6,11 +6,10 @@
     "features": {
         "ghcr.io/devcontainers/features/node:1": {}
     },
-    "waitFor": "onCreateCommand",
     "updateContentCommand": "npm install",
     "postCreateCommand": "",
     "postAttachCommand": {
-        "server": "npm start -- --hostname 127.0.0.1"
+        "server": "npm start -- --host 127.0.0.1"
     },
     "customizations": {
         "codespaces": {
