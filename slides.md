@@ -1,3 +1,59 @@
+![ASDI](https://i.ytimg.com/vi/c4Nd8ydxVpI/maxresdefault.jpg)
+---
+## Improving The ASDI Experience
+
+---
+ASDI's organic, decentralized approach has worked great in several aspects.
+
+- Minimal gatekeeping lowers the barrier of entry for data providers.<!-- .element: class="fragment" -->
+- Gives large federal data providers like NOAA a space for experimentation.<!-- .element: class="fragment" -->
+- As intended, it has truly democratized access to planetary scale data.<!-- .element: class="fragment" -->
+
+---
+But the same aspects that make it successful also reduce its effectiveness
+
+- Limited centralized oversight leads to a lack of focus on important thematic areas.<!-- .element: class="fragment" -->
+- Lack of standardization reduces data interoperability for data users.<!-- .element: class="fragment" -->
+- The lack of a centralized indexing and search inteface makes data discovery and fusion impossible for data users.<!-- .element: class="fragment" -->
+
+---
+### How can we improve the ASDI experience for the data community?
+---
+### Step 1
+Adopt a common metadata standard.
+---
+![STAC](https://raw.githubusercontent.com/radiantearth/stac-site/master/images/logo/stac-030-long.png)
+---
+STAC is a community driven standard for metadata and metadata APIs.
+
+Rather than originitating with a standards body like OGC, STAC evolved from industry and community members who had immediate, common problems to solve.
+---
+![STAC history](https://staging.dev.element84.com/wp-content/uploads/2023/03/STAC_timeline_v2.jpg)
+
+---
+<!-- .slide: data-background-color="white" -->
+![Development Seed](http://summit2015.hotosm.org/img/sponsor_logos/silver_devseed.png)
+---
+Development Seed has been involved with STAC since its inception.
+
+We've built both the main reference implementations of the API standard as well as suite of tooling for working with the metadata specification.
+---
+<!-- .slide: data-background-color="white" -->
+Most relevant to this project is our work building the API infrastructure for Microsoft's Planetary Computer
+![Planetary Computer](https://staging.dev.element84.com/wp-content/uploads/2023/05/Screenshot-2023-05-01-at-5.13.58-PM-1024x255.png)
+---
+The Planetary Computer obviously runs on Azure.
+But the bulk of the NASA projects we build use the same suite of libraries deployed on AWS.
+---
+<!-- .slide: data-background-color="white" -->
+![VEDA](https://www.earthdata.nasa.gov/s3fs-public/styles/small_third_320px_/public/2022-08/veda_logo_landing.jpg?VersionId=WSeWbp1l67IFvS2xOSXB2AdHF_78VzQX&itok=NEqHRpxW)
+![MAAP](https://www.earthdata.nasa.gov/s3fs-public/styles/medium_half_480px_/public/2022-02/MAAP_logo.jpg?VersionId=zowUUuoD1OfbXTyTWlc_KLs6TnU1DNI6&itok=kEbXx7uI)
+![CSDA](https://www.earthdata.nasa.gov/s3fs-public/2023-01/csda-logo-150x150.png?VersionId=f7cRgCo9oXtjHTCkCrxmS9aiUO16D0pU)
+---
+
+NOTE: Could be relative path to images as well...
+
+
 A quick example set of slides
 
 ---
