@@ -19,8 +19,7 @@ But the same aspects that make it successful also reduce its effectiveness
 ---
 ### How can we improve the ASDI experience for the data community?
 ---
-### Step 1
-Adopt a common metadata standard.
+### Adopt a common metadata standard.
 ---
 ![STAC](https://raw.githubusercontent.com/radiantearth/stac-site/master/images/logo/stac-030-long.png)
 ---
@@ -38,17 +37,61 @@ Development Seed has been involved with STAC since its inception.
 
 We've built both the main reference implementations of the API standard as well as suite of tooling for working with the metadata specification.
 ---
+The bulk of our projects are built on the STAC specification and a common set of open source libraries we build and maintain.
+---
+
 <!-- .slide: data-background-color="white" -->
 Most relevant to this project is our work building the API infrastructure for Microsoft's Planetary Computer
 ![Planetary Computer](https://staging.dev.element84.com/wp-content/uploads/2023/05/Screenshot-2023-05-01-at-5.13.58-PM-1024x255.png)
 ---
 The Planetary Computer obviously runs on Azure.
-But the bulk of the NASA projects we build use the same suite of libraries deployed on AWS.
+
+But the bulk of the NASA projects we build use STAC and the same suite of libraries deployed on AWS.
 ---
 <!-- .slide: data-background-color="white" -->
 ![VEDA](https://www.earthdata.nasa.gov/s3fs-public/styles/small_third_320px_/public/2022-08/veda_logo_landing.jpg?VersionId=WSeWbp1l67IFvS2xOSXB2AdHF_78VzQX&itok=NEqHRpxW)
 ![MAAP](https://www.earthdata.nasa.gov/s3fs-public/styles/medium_half_480px_/public/2022-02/MAAP_logo.jpg?VersionId=zowUUuoD1OfbXTyTWlc_KLs6TnU1DNI6&itok=kEbXx7uI)
 ![CSDA](https://www.earthdata.nasa.gov/s3fs-public/2023-01/csda-logo-150x150.png?VersionId=f7cRgCo9oXtjHTCkCrxmS9aiUO16D0pU)
+---
+When used together we call this suite of libraries eoAPI.
+
+It serves 3 main purposes
+- Store metadata for data files in a durable database.
+- Serve this metadata in a standard, searchable API that a wide variety of clients can utilize.
+- Provide a standard API that allows dynamically visualizing data files for analysis. 
+---
+The eoAPI suite is built from 3 libraries
+- pgSTAC: An optimized Postgres schema to index and search large scale STAC collection
+- stac-fastapi: An OGC Features API compliant FastAPI application for metadata search
+- titiler-pgstac: a TiTiler extension for pgSTAC for large scale dynamic mosaic for STAC data
+---
+### How have we realized this vision for ASDI?
+---
+### Step 1 - Infrastructure
+---
+### [cdk-pgstac](https://github.com/developmentseed/cdk-pgstac)
+
+To provide an easy entrypoint and capture best practices we built a reusable CDK construct to package all of the API infrastructure into a single deployment.
+
+---
+Now we have a central API where data providers can publish standard metadata for all of the datasets they manage.
+---
+### Step 2 - Enable Data Providers
+
+- Give them easy tools to turn their domain specific knowledge into pipelines for creating cloud-native formats and metadata.
+- Run these pipelines automatically at scale.
+---
+### [Stactools](https://github.com/stactools-packages)
+
+The community has been capturing product format specific information and transformations in a set of standard packages called stactools.
+---
+### [ASDI Pipelines](https://github.com/developmentseed/aws-asdi-pipelines)
+- Data providers and the community build a stactools package for their dataset (in many cases these already exist from our work on Planetary Computer).
+- Data providers use common AWS configurations on the buckets they manage (SNS Topics and Inventories).
+- Using these, data providers can create pipeline which will automatically deploy infrastructure that monitors the SNS topic (and parses the inventory) to create cloud-native formats and metadata and ingest them into the API. 
+---
+<!-- .slide: data-background-color="white" -->
+![ASDI Pipelines](https://github.com/developmentseed/aws-asdi-pipelines/blob/main/docs/aws_asdi_cog.png)
 ---
 
 NOTE: Could be relative path to images as well...
