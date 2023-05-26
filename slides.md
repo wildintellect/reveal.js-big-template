@@ -25,7 +25,7 @@ But the same aspects that make it successful also reduce its effectiveness
 ---
 STAC is a community driven standard for metadata and metadata APIs.
 
-Rather than originitating with a standards body like OGC, STAC evolved from industry and community members who had immediate, common problems to solve.
+Rather than originating with a standards body like OGC, STAC evolved from industry and community members who had immediate, common problems to solve.
 ---
 ![STAC history](https://staging.dev.element84.com/wp-content/uploads/2023/03/STAC_timeline_v2.jpg)
 
@@ -58,7 +58,7 @@ When used together we call this suite of libraries eoAPI.
 It serves 3 main purposes
 - Store metadata for data files in a durable database.
 - Serve this metadata in a standard, searchable API that a wide variety of clients can utilize.
-- Provide a standard API that allows dynamically visualizing data files for analysis. 
+- Provide a standard API that allows dynamically visualizing data files, and analysis optimized access. 
 ---
 The eoAPI suite is built from 3 libraries
 - pgSTAC: An optimized Postgres schema to index and search large scale STAC collection
